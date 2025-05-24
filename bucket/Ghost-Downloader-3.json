@@ -8,7 +8,6 @@
     "bin": "Ghost-Downloader-3.py",
     "shortcuts": [
         [
-            "Ghost-Downloader-3.py",
             "Ghost Downloader"
         ]
     ],
