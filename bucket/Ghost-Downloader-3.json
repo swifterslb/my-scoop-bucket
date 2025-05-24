@@ -1,62 +1,32 @@
 {
-    "version": "",
-    "description": "",
-    "homepage": "",
-    "license": "",
-    "notes": "",
-    "architecture": {
-        "64bit": {
-            "url": "",
-            "hash": ""
-        },
-        "32bit": {
-            "url": "",
-            "hash": ""
-        },
-        "arm64": {
-            "url": "",
-            "hash": ""
-        }
-    },
-    "pre_install": "",
-    "installer": {
-        "script": ""
-    },
-    "post_install": [
-        "",
-        ""
+    "version": "3.5.11",
+    "description": "A cross-platform fluent-design AI-boost multi-threaded downloader built with Python.",
+    "homepage": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+    "license": "GPL-3.0",
+    "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3/releases/download/v3.5.11/Ghost-Downloader-v3.5.11-Windows-x86_64-Setup.exe",
+    "hash": "9E2CCC43293E12392F8D0E250826444743F1980E6236B22984D61ACEE7273FEF",
+    "bin": "Ghost-Downloader-3.py",
+    "shortcuts": [
+        [
+            "Ghost-Downloader-3.py",
+            "Ghost Downloader"
+        ]
     ],
-    "uninstaller": {
-        "script": ""
-    },
-    "bin": "",
-    "env_add_path": [
-        "",
-        ""
-    ],
-    "persist": [
-        "",
-        ""
-    ],
-    "checkver": {
-        "url": "",
-        "regex": ""
-    },
     "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": ""
-            },
-            "32bit": {
-                "url": ""
-            },
-            "arm64": {
-                "url": ""
-            }
-        },
+        "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3/releases/download/v$version/Ghost-Downloader-v$version-Windows-x86_64-Setup.exe",
         "hash": {
-            "url": "",
-            "regex": ""
+            "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3/releases/latest",
+            "regex": "SHA256: ([0-9a-f]{64})"
         }
-    }
+    },
+    "checkver": {
+        "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3/releases/latest",
+        "regex": "tag/v([\\d.]+)"
+    },
+    "pre_install": [
+        "if (Test-Path \"$dir\\Ghost-Downloader-3.py\") {",
+        "    Write-Host 'Ghost-Downloader-3 is already installed.';",
+        "    exit 0;",
+        "}"
+    ]
 }
