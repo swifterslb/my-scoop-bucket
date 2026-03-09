@@ -10,15 +10,6 @@
     }
   },
   "innosetup": true,
-  "installer": {
-    "script": [
-      "if (!(Test-Path \"$dir\\Aonsoku.exe\")) {",
-      "  # Extract the Inno Setup installer into $dir",
-      "  innounp -x -d\"$dir\" \"$dir\\Aonsoku-v0.12.0-win-x64.exe\"",
-      "}",
-      "Remove-Item \"$dir\\Aonsoku-v0.12.0-win-x64.exe\" -Force -ErrorAction SilentlyContinue"
-    ]
-  },
   "bin": [
     "Aonsoku.exe"
   ],
@@ -29,7 +20,7 @@
     ]
   ],
   "checkver": {
-    "github": "victoralvesf/aonsoku"
+    "github": "https://github.com/victoralvesf/aonsoku"
   },
   "autoupdate": {
     "architecture": {
