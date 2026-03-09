@@ -8,13 +8,14 @@
       "url": "https://github.com/victoralvesf/aonsoku/releases/download/v0.12.0/Aonsoku-v0.12.0-win-x64.exe"
     }
   },
+  "pre_install": [
+    "# Run NSIS installer silently to $dir",
+    "\"$dir\\Aonsoku-v0.12.0-win-x64.exe\" /S /D=\"$dir\""
+  ],
   "installer": {
     "script": [
-      "# Extract NSIS installer with 7zip (requires 'scoop install 7zip')",
-      "7z x \"$dir\\Aonsoku-v0.12.0-win-x64.exe\" -o\"$dir\" -y",
-      "# Clean up installer files",
-      "Remove-Item \"$dir\\[NSIS].nsi\", \"$dir\\[LICENSE].txt\", \"$dir\\uninstallerIcon.ico\" -Force -ErrorAction SilentlyContinue",
-      "Remove-Item \"$dir\\$PLUGINSDIR\", \"$dir\\$R0\" -Recurse -Force -ErrorAction SilentlyContinue"
+      "# Clean up installer exe after silent install",
+      "Remove-Item \"$dir\\Aonsoku-v0.12.0-win-x64.exe\" -Force -ErrorAction SilentlyContinue"
     ]
   },
   "bin": [
