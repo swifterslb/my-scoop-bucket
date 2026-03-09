@@ -10,11 +10,11 @@
   },
   "innosetup": true,
   "bin": [
-    "Aonsoku.exe"
+    "Aonsoku\\Aonsoku.exe"
   ],
   "shortcuts": [
     [
-      "Aonsoku.exe",
+      "Aonsoku\\Aonsoku.exe",
       "Aonsoku"
     ]
   ],
