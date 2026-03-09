@@ -6,15 +6,25 @@
   "architecture": {
     "64bit": {
       "url": "https://github.com/victoralvesf/aonsoku/releases/download/v0.12.0/Aonsoku-v0.12.0-win-x64.exe",
-      "hash": "sha256-ce483685777e2a8c5f7eac05bca2c785739a66d9bc9ca5bd4759ce0b32084ed6"
+      "hash": "ce483685777e2a8c5f7eac05bca2c785739a66d9bc9ca5bd4759ce0b32084ed6"
     }
   },
+  "innosetup": true,
+  "installer": {
+    "script": [
+      "if (!(Test-Path \"$dir\\Aonsoku.exe\")) {",
+      "  # Extract the Inno Setup installer into $dir",
+      "  innounp -x -d\"$dir\" \"$dir\\Aonsoku-v0.12.0-win-x64.exe\"",
+      "}",
+      "Remove-Item \"$dir\\Aonsoku-v0.12.0-win-x64.exe\" -Force -ErrorAction SilentlyContinue"
+    ]
+  },
   "bin": [
-    "aonsoku.exe"
+    "Aonsoku.exe"
   ],
   "shortcuts": [
     [
-      "aonsoku.exe",
+      "Aonsoku.exe",
       "Aonsoku"
     ]
   ],
@@ -24,7 +34,7 @@
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/victoralvesf/aonsoku/releases/download/v$version/Aonsoku-$version-win-x64.exe"
+        "url": "https://github.com/victoralvesf/aonsoku/releases/download/v$version/Aonsoku-v$version-win-x64.exe"
       }
     }
   }
