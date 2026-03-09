@@ -9,15 +9,13 @@
     }
   },
   "pre_install": [
-    "# Run NSIS installer silently to $dir",
-    "\"$dir\\Aonsoku-v0.12.0-win-x64.exe\" /S /D=\"$dir\""
+    "& \"$dir\\Aonsoku-v0.12.0-win-x64.exe\" /S /D=$dir"
   ],
-  // "installer": {
-  //   "script": [
-  //     "# Clean up installer exe after silent install",
-  //     "Remove-Item \"$dir\\Aonsoku-v0.12.0-win-x64.exe\" -Force -ErrorAction SilentlyContinue"
-  //   ]
-  // },
+  "installer": {
+    "script": [
+      "Remove-Item \"$dir\\Aonsoku-v0.12.0-win-x64.exe\" -Force -ErrorAction SilentlyContinue"
+    ]
+  },
   "bin": [
     "Aonsoku.exe"
   ],
